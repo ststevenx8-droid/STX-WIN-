@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STX WIN | Luxury Casino Suite</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;900&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+    <canvas id="particles-canvas"></canvas>
+
+    <div class="app-container">
+        <!-- Reusable Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <span class="gold-text logo-font">STX</span> <span class="neon-text logo-font">WIN</span>
+            </div>
+            <nav class="sidebar-menu">
+                <a href="index.html" class="menu-item"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="games.html" class="menu-item active"><i class="fa-solid fa-gamepad"></i> Games</a>
+                <a href="#promotions" class="menu-item"><i class="fa-solid fa-gift"></i> Promotions</a>
+                <a href="#leaderboard" class="menu-item"><i class="fa-solid fa-crown"></i> Leaderboard</a>
+                <a href="profile.html" class="menu-item"><i class="fa-solid fa-user-ninja"></i> Profile</a>
+                <a href="settings.html" class="menu-item"><i class="fa-solid fa-sliders"></i> Settings</a>
+                <a href="#support" class="menu-item"><i class="fa-solid fa-headset"></i> Support</a>
+            </nav>
+        </aside>
+
+        <main class="main-panel">
+            <header class="main-header">
+                <h2>CASINO LOBBY</h2>
+                <div class="header-actions">
+                    <div class="balance-pill">
+                        <i class="fa-solid fa-coins gold-text"></i>
+                        <span id="header-balance">$15,420.50</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-viewport">
+                <!-- Search & Filters -->
+                <div class="lobby-filters">
+                    <div class="search-bar-container">
+                        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                        <input type="text" placeholder="Search catalog..." id="lobby-search">
+                    </div>
+                    <div class="game-categories-row" id="lobby-categories">
+                        <button class="category-btn active" data-category="all">All Games</button>
+                        <button class="category-btn" data-category="slots">Slots</button>
+                        <button class="category-btn" data-category="live">Live Dealer</button>
+                        <button class="category-btn" data-category="table">Table</button>
+                    </div>
+                </div>
+
+                <!-- Catalog Grid -->
+                <section class="games-section">
+                    <div class="games-grid" id="full-games-grid">
+                        <!-- Instantiated Dynamically via games.js -->
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="games.js"></script>
+</body>
+</html>
