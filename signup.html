@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STX WIN | Sign Up</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@800&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body class="auth-layout">
+    <canvas id="particles-canvas"></canvas>
+    
+    <div class="auth-wrapper">
+        <div class="auth-card">
+            <div class="auth-header">
+                <a href="index.html" class="logo-link">
+                    <span class="gold-text logo-font">STX</span> <span class="neon-text logo-font">WIN</span>
+                </a>
+                <h2>Create Account</h2>
+                <p>Register to unlock luxury bonuses</p>
+            </div>
+
+            <form id="signup-form" class="auth-form">
+                <div class="input-group">
+                    <label for="username"><i class="fa-solid fa-user"></i> VIP Username</label>
+                    <input type="text" id="username" placeholder="LuckyPlayer77" required>
+                </div>
+                <div class="input-group">
+                    <label for="email"><i class="fa-solid fa-envelope"></i> Email Address</label>
+                    <input type="email" id="email" placeholder="name@example.com" required>
+                </div>
+                <div class="input-group">
+                    <label for="password"><i class="fa-solid fa-lock"></i> Strong Password</label>
+                    <input type="password" id="password" placeholder="••••••••••••" required>
+                </div>
+
+                <div class="form-options">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="terms-agree" required>
+                        <span class="checkmark"></span>
+                        I agree to terms, conditions, & privacy norms.
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-gold-neon w-100 mt-1" id="signup-submit-btn">
+                    <span>CREATE PROFILE</span>
+                </button>
+            </form>
+
+            <div class="auth-divider">
+                <span>OR SIGN UP WITH</span>
+            </div>
+
+            <div class="social-login">
+                <button class="btn btn-outline w-100" id="google-signup-btn">
+                    <img src="https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?w=50&q=80" alt="Google" class="social-icon"> Google Account
+                </button>
+            </div>
+
+            <p class="auth-footer-text">
+                Already registered? <a href="login.html">Sign In Here</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="animation.js"></script>
+    <script type="module" src="firebase.js"></script>
+    <script type="module" src="auth.js"></script>
+</body>
+</html>
