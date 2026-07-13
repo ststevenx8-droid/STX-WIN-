@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STX WIN | Premium Gaming & Casino Platform</title>
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800;900&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+    <!-- Background Particles Canvas -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- App Wrapper -->
+    <div class="app-container">
+        
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-brand">
+                <span class="gold-text logo-font">STX</span> <span class="neon-text logo-font">WIN</span>
+            </div>
+            <nav class="sidebar-menu">
+                <a href="index.html" class="menu-item active"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="games.html" class="menu-item"><i class="fa-solid fa-gamepad"></i> Games</a>
+                <a href="#promotions" class="menu-item"><i class="fa-solid fa-gift"></i> Promotions</a>
+                <a href="#leaderboard" class="menu-item"><i class="fa-solid fa-crown"></i> Leaderboard</a>
+                <a href="profile.html" class="menu-item"><i class="fa-solid fa-user-ninja"></i> Profile</a>
+                <a href="settings.html" class="menu-item"><i class="fa-solid fa-sliders"></i> Settings</a>
+                <a href="#support" class="menu-item"><i class="fa-solid fa-headset"></i> Support</a>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-quick-profile" id="sidebar-user-card" style="display: none;">
+                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=100&q=80" alt="Avatar" class="avatar-sm">
+                    <div class="user-details">
+                        <span id="user-display-name">VIP Player</span>
+                        <span class="gold-text balance-text">$0.00</span>
+                    </div>
+                </div>
+                <a href="login.html" id="sidebar-login-btn" class="btn btn-gold btn-sm w-100"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+            </div>
+        </aside>
+
+        <!-- Main Content Panel -->
+        <main class="main-panel">
+            <!-- Header Nav -->
+            <header class="main-header">
+                <button class="mobile-toggle" id="mobile-menu-toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <div class="search-bar-container">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" placeholder="Search premium games, slots, live dealers..." id="global-search-input">
+                </div>
+                <div class="header-actions">
+                    <div class="balance-pill">
+                        <i class="fa-solid fa-coins gold-text"></i>
+                        <span class="balance-value" id="header-balance">$15,420.50</span>
+                    </div>
+                    <div class="notification-bell">
+                        <i class="fa-solid fa-bell"></i>
+                        <span class="badge">3</span>
+                    </div>
+                    <div class="user-avatar-menu-trigger" id="user-dropdown-btn">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=100&q=80" alt="Profile Avatar" class="header-avatar">
+                        <div class="dropdown-menu" id="header-dropdown">
+                            <a href="profile.html"><i class="fa-solid fa-user"></i> My Profile</a>
+                            <a href="settings.html"><i class="fa-solid fa-gears"></i> Settings</a>
+                            <hr class="dropdown-divider">
+                            <a href="#" id="logout-btn"><i class="fa-solid fa-power-off"></i> Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="content-viewport">
+                <!-- Premium Hero Banner -->
+                <section class="hero-banner">
+                    <div class="hero-content">
+                        <div class="hero-tag"><i class="fa-solid fa-fire-flame-curved"></i> HOT RELEASE</div>
+                        <h1 class="hero-title">SUPER <span class="gold-gradient-text">ACE</span></h1>
+                        <p class="hero-subtitle">Step into luxury. High multipliers, dynamic mechanics, and progressive gold cards await your next spin.</p>
+                        <div class="hero-actions-row">
+                            <button class="btn btn-gold-neon btn-lg" onclick="location.href='games.html?play=super-ace'"><i class="fa-solid fa-circle-play"></i> PLAY NOW</button>
+                            <button class="btn btn-outline btn-lg"><i class="fa-solid fa-star"></i> DEMO</button>
+                        </div>
+                    </div>
+                    <div class="hero-banner-art">
+                        <div class="glow-orb"></div>
+                        <img src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b?w=600&q=80" alt="Super Ace Casino Feature" class="feature-img">
+                    </div>
+                </section>
+
+                <!-- Category Filters -->
+                <section class="game-categories-row">
+                    <button class="category-btn active" data-category="all"><i class="fa-solid fa-border-all"></i> All Games</button>
+                    <button class="category-btn" data-category="slots"><i class="fa-solid fa-clover"></i> Premium Slots</button>
+                    <button class="category-btn" data-category="live"><i class="fa-solid fa-person-military-pointing"></i> Live Casino</button>
+                    <button class="category-btn" data-category="table"><i class="fa-solid fa-dice"></i> Table Games</button>
+                    <button class="category-btn" data-category="popular"><i class="fa-solid fa-fire"></i> Hot Favorites</button>
+                </section>
+
+                <!-- Dynamic Games Grid -->
+                <section class="games-section">
+                    <div class="section-title-row">
+                        <h2>FEATURING <span class="neon-cyan-text">EXCLUSIVE RELEASES</span></h2>
+                        <a href="games.html" class="view-all-link">View All Games <i class="fa-solid fa-arrow-right-long"></i></a>
+                    </div>
+                    <div class="games-grid" id="featured-games-grid">
+                        <!-- Populated dynamically via games.js -->
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="animation.js"></script>
+    <!-- Firebase Standard Configuration and Authentication Scripts -->
+    <script type="module" src="firebase.js"></script>
+    <script type="module" src="auth.js"></script>
+    <script type="module" src="games.js"></script>
+    <script type="module" src="app.js"></script>
+</body>
+</html>
