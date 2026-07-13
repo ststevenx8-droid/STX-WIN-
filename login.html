@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STX WIN | Sign In</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@800&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body class="auth-layout">
+    <canvas id="particles-canvas"></canvas>
+    
+    <div class="auth-wrapper">
+        <div class="auth-card">
+            <div class="auth-header">
+                <a href="index.html" class="logo-link">
+                    <span class="gold-text logo-font">STX</span> <span class="neon-text logo-font">WIN</span>
+                </a>
+                <h2>Welcome Back</h2>
+                <p>The VIP experience awaits you</p>
+            </div>
+
+            <form id="login-form" class="auth-form">
+                <div class="input-group">
+                    <label for="email"><i class="fa-solid fa-envelope"></i> Email Address</label>
+                    <input type="email" id="email" placeholder="name@example.com" required>
+                </div>
+                <div class="input-group">
+                    <div class="label-row">
+                        <label for="password"><i class="fa-solid fa-lock"></i> Password</label>
+                        <a href="#" class="forgot-link" id="forgot-password-btn">Forgot Password?</a>
+                    </div>
+                    <input type="password" id="password" placeholder="••••••••••••" required>
+                </div>
+
+                <div class="form-options">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="remember-me">
+                        <span class="checkmark"></span>
+                        Remember Me
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-gold w-100 mt-1" id="signin-submit-btn">
+                    <span>SIGN IN SECURELY</span>
+                </button>
+            </form>
+
+            <div class="auth-divider">
+                <span>OR SIGN IN WITH</span>
+            </div>
+
+            <div class="social-login">
+                <button class="btn btn-outline w-100" id="google-signin-btn">
+                    <img src="https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?w=50&q=80" alt="Google" class="social-icon"> Google Account
+                </button>
+            </div>
+
+            <p class="auth-footer-text">
+                New to the platform? <a href="signup.html">Create an Account</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="animation.js"></script>
+    <script type="module" src="firebase.js"></script>
+    <script type="module" src="auth.js"></script>
+</body>
+</html>
