@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STX WIN | Account Settings</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="settings.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+    <canvas id="particles-canvas"></canvas>
+
+    <div class="app-container">
+        <!-- Reusable Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <span class="gold-text logo-font">STX</span> <span class="neon-text logo-font">WIN</span>
+            </div>
+            <nav class="sidebar-menu">
+                <a href="index.html" class="menu-item"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="games.html" class="menu-item"><i class="fa-solid fa-gamepad"></i> Games</a>
+                <a href="#promotions" class="menu-item"><i class="fa-solid fa-gift"></i> Promotions</a>
+                <a href="#leaderboard" class="menu-item"><i class="fa-solid fa-crown"></i> Leaderboard</a>
+                <a href="profile.html" class="menu-item"><i class="fa-solid fa-user-ninja"></i> Profile</a>
+                <a href="settings.html" class="menu-item active"><i class="fa-solid fa-sliders"></i> Settings</a>
+            </nav>
+        </aside>
+
+        <main class="main-panel">
+            <header class="main-header">
+                <h2>SETTINGS</h2>
+            </header>
+
+            <div class="content-viewport">
+                <div class="settings-card">
+                    <!-- Preferences -->
+                    <section class="settings-section">
+                        <h3><i class="fa-solid fa-eye"></i> Preferences</h3>
+                        <div class="setting-item">
+                            <div class="setting-details">
+                                <span class="setting-title">Dark Mode Theme</span>
+                                <span class="setting-desc">Keep active contrast elements</span>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" checked id="dark-mode-toggle">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <div class="setting-details">
+                                <span class="setting-title">Sound Effects</span>
+                                <span class="setting-desc">Live dealer audio triggers</span>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" checked id="audio-toggle">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </section>
+
+                    <!-- Security Forms -->
+                    <section class="settings-section">
+                        <h3><i class="fa-solid fa-shield-halved"></i> Privacy & Password Updates</h3>
+                        <form id="change-pass-form" class="auth-form mt-1">
+                            <div class="input-group">
+                                <label for="current-pass">Current Password</label>
+                                <input type="password" id="current-pass" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="new-pass">New Secure Password</label>
+                                <input type="password" id="new-pass" required>
+                            </div>
+                            <button type="submit" class="btn btn-gold btn-sm"><i class="fa-solid fa-key"></i> Update Password</button>
+                        </form>
+                    </section>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="settings.js"></script>
+</body>
+</html>
