@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STX WIN | Player VIP Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;900&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+    <canvas id="particles-canvas"></canvas>
+
+    <div class="app-container">
+        <!-- Reusable Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <span class="gold-text logo-font">STX</span> <span class="neon-text logo-font">WIN</span>
+            </div>
+            <nav class="sidebar-menu">
+                <a href="index.html" class="menu-item"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="games.html" class="menu-item"><i class="fa-solid fa-gamepad"></i> Games</a>
+                <a href="#promotions" class="menu-item"><i class="fa-solid fa-gift"></i> Promotions</a>
+                <a href="#leaderboard" class="menu-item"><i class="fa-solid fa-crown"></i> Leaderboard</a>
+                <a href="profile.html" class="menu-item active"><i class="fa-solid fa-user-ninja"></i> Profile</a>
+                <a href="settings.html" class="menu-item"><i class="fa-solid fa-sliders"></i> Settings</a>
+                <a href="#support" class="menu-item"><i class="fa-solid fa-headset"></i> Support</a>
+            </nav>
+        </aside>
+
+        <main class="main-panel">
+            <header class="main-header">
+                <h2>PLAYER PORTAL</h2>
+                <div class="header-actions">
+                    <div class="balance-pill">
+                        <i class="fa-solid fa-coins gold-text"></i>
+                        <span id="header-balance">$15,420.50</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=100&q=80" alt="Avatar" class="header-avatar">
+                </div>
+            </header>
+
+            <div class="content-viewport">
+                <!-- Profile Cover Section -->
+                <section class="profile-card">
+                    <div class="profile-meta-main">
+                        <div class="avatar-edit-container">
+                            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=200&q=80" alt="Profile avatar" id="profile-picture">
+                            <label for="avatar-upload" class="avatar-upload-overlay">
+                                <i class="fa-solid fa-camera"></i>
+                            </label>
+                            <input type="file" id="avatar-upload" accept="image/*" style="display:none;">
+                        </div>
+                        <div class="profile-info-details">
+                            <div class="tier-indicator">VIP TIER 4</div>
+                            <h2 id="profile-username">ElitePlayer77</h2>
+                            <p id="profile-email">eliteplayer77@stxwin.com</p>
+                            <p class="join-date"><i class="fa-solid fa-calendar-days"></i> Joined November 2024</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Statistics and Achievements Grids -->
+                <div class="profile-dashboard-grid">
+                    <div class="stats-card">
+                        <h3><i class="fa-solid fa-chart-simple"></i> PERFORMANCE OVERVIEW</h3>
+                        <div class="stats-grid-inner">
+                            <div class="stat-box">
+                                <span class="stat-label">Total Bets</span>
+                                <span class="stat-value">1,480</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-label">Win Rate</span>
+                                <span class="stat-value neon-cyan-text">58.4%</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-label">Biggest Multiplier</span>
+                                <span class="stat-value gold-text">500x</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-label">VIP XP Status</span>
+                                <span class="stat-value">4,500 / 5,000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="achievements-card">
+                        <h3><i class="fa-solid fa-trophy"></i> VIP RECOGNITIONS</h3>
+                        <div class="achievements-shelf">
+                            <div class="badge-item active" title="Big Win Badge">
+                                <i class="fa-solid fa-crown badge-icon"></i>
+                                <span>High Roller</span>
+                            </div>
+                            <div class="badge-item active" title="Active Weekly Spells">
+                                <i class="fa-solid fa-bolt badge-icon"></i>
+                                <span>Fast Wheeler</span>
+                            </div>
+                            <div class="badge-item" title="Unlock at VIP level 5">
+                                <i class="fa-solid fa-lock badge-icon"></i>
+                                <span>STX Overlord</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="firebase.js"></script>
+    <script type="module" src="profile.js"></script>
+</body>
+</html>
