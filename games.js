@@ -1,102 +1,60 @@
-// STX WIN Catalog System
+document.addEventListener('DOMContentLoaded', () => {
+  // Sync starting/current balance in lobby view
+  const currentBalance = localStorage.getItem('casino_balance') || '10000';
+  document.getElementById('lobby-balance').innerText = parseFloat(currentBalance).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
-export const gamesData = [
-    {
-        id: "super-ace",
-        title: "Super Ace",
-        category: "slots",
-        popular: true,
-        img: "https://images.unsplash.com/photo-1518609878373-06d740f60d8b?w=600&q=80"
-    },
-    {
-        id: "golden-baccarat",
-        title: "Golden Baccarat",
-        category: "live",
-        popular: true,
-        img: "https://images.unsplash.com/photo-1570649236495-42fa5fe3c48b?w=600&q=80"
-    },
-    {
-        id: "neon-roulette",
-        title: "Neon Roulette VIP",
-        category: "table",
-        popular: false,
-        img: "https://images.unsplash.com/photo-1596838132731-3301c3fd4317?w=600&q=80"
-    },
-    {
-        id: "blackjack-royale",
-        title: "Blackjack Royale",
-        category: "table",
-        popular: true,
-        img: "https://images.unsplash.com/photo-1511193311914-0346f16efe90?w=600&q=80"
-    },
-    {
-        id: "mega-spin-slots",
-        title: "Mega Spin 777",
-        category: "slots",
-        popular: false,
-        img: "https://images.unsplash.com/photo-1518609878373-06d740f60d8b?w=600&q=80"
-    }
-];
+  // Direct Links/Navigation
+  const superAceCard = document.getElementById('super-ace-card');
+  const featuredPlayBtn = document.getElementById('featured-play-btn');
 
-export function renderGames(gridId, categoryFilter = "all", searchQuery = "") {
-    const grid = document.getElementById(gridId);
-    if (!grid) return;
+  const launchSuperAce = () => {
+    window.location.href = 'slot.html';
+  };
 
-    grid.innerHTML = "";
+  if (superAceCard) superAceCard.addEventListener('click', launchSuperAce);
+  if (featuredPlayBtn) featuredPlayBtn.addEventListener('click', launchSuperAce);
 
-    const filteredGames = gamesData.filter(game => {
-        const matchesCategory = categoryFilter === "all" || game.category === categoryFilter;
-        const matchesSearch = game.title.toLowerCase().includes(searchQuery.toLowerCase());
-        return matchesCategory && matchesSearch;
+  // Search Filter Interaction
+  const searchInput = document.getElementById('game-search');
+  const cards = document.querySelectorAll('.game-card');
+
+  searchInput.addEventListener('input', (e) => {
+    const query = e.target.value.toLowerCase();
+    cards.forEach(card => {
+      const title = card.querySelector('h3').innerText.toLowerCase();
+      if (title.includes(query)) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
     });
+  });
 
-    filteredGames.forEach(game => {
-        const card = document.createElement("div");
-        card.className = "game-card";
-        card.innerHTML = `
-            <div class="game-card-thumbnail">
-                <img src="${game.img}" alt="${game.title}">
-                ${game.popular ? `<span class="badge-popular">HOT</span>` : ""}
-                <button class="fav-btn" data-id="${game.id}"><i class="fa-regular fa-heart"></i></button>
-                <div class="play-hover-overlay">
-                    <button class="btn btn-gold btn-sm"><i class="fa-solid fa-play"></i> PLAY</button>
-                </div>
-            </div>
-            <div class="game-card-info">
-                <div class="game-category">${game.category}</div>
-                <div class="game-title">${game.title}</div>
-            </div>
-        `;
-        grid.appendChild(card);
-    });
-}
+  // Filter Categories
+  const catBtns = document.querySelectorAll('.cat-btn');
+  catBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      catBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
 
-// Global initialization bindings
-document.addEventListener("DOMContentLoaded", () => {
-    renderGames("featured-games-grid", "all");
-    renderGames("full-games-grid", "all");
-
-    // Dynamic Filter actions
-    const categoryButtons = document.querySelectorAll(".category-btn");
-    categoryButtons.forEach(btn => {
-        btn.addEventListener("click", (e) => {
-            categoryButtons.forEach(b => b.classList.remove("active"));
-            e.currentTarget.classList.add("active");
-            const filter = e.currentTarget.getAttribute("data-category");
-            renderGames("featured-games-grid", filter);
-            renderGames("full-games-grid", filter);
-        });
-    });
-
-    // Handle Searches
-    const searchInputs = ["global-search-input", "lobby-search"];
-    searchInputs.forEach(id => {
-        const input = document.getElementById(id);
-        if (input) {
-            input.addEventListener("input", (e) => {
-                const targetGrid = id === "lobby-search" ? "full-games-grid" : "featured-games-grid";
-                renderGames(targetGrid, "all", e.target.value);
-            });
+      const cat = btn.getAttribute('data-category');
+      cards.forEach(card => {
+        if (cat === 'all') {
+          card.style.display = 'block';
+        } else {
+          const cardCat = card.getAttribute('data-category');
+          card.style.display = cardCat === cat ? 'block' : 'none';
         }
+      });
     });
+  });
+
+  // Favorite Heart Toggle
+  const hearts = document.querySelectorAll('.favorite-heart');
+  hearts.forEach(heart => {
+    heart.addEventListener('click', (e) => {
+      e.stopPropagation(); // Avoid triggering card navigation
+      heart.classList.toggle('active');
+    });
+  });
 });
